@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'node:20-bookworm-slim'
+      args '-u root:root -v /var/run/docker.sock:/var/run/docker.sock'
+    }
+  }
 
   stages {
     stage('Checkout') {
