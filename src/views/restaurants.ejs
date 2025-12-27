@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Restaurants</title>
+</head>
+<body>
+  <h2>Restaurants</h2>
+
+  <% if (user) { %>
+    <p><b><%= user.username %></b> | <a href="/admin">Admin</a> | <a href="/logout">Logout</a></p>
+  <% } else { %>
+    <p><a href="/login">Login</a></p>
+  <% } %>
+
+  <ul>
+    <% restaurants.forEach(r => { %>
+      <li><b><%= r.name %></b> - <%= r.city %> - <%= r.rating %>/5</li>
+    <% }) %>
+  </ul>
+</body>
+</html>
