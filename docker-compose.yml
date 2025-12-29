@@ -5,3 +5,5 @@ services:
     ports:
       - "3000:3000"
     restart: always
+    volumes:
+      - ./data.db:/app/data.db
